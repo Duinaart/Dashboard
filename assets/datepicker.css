@@ -1,0 +1,45 @@
+.DateInput_input, .DateInput_input_1 {
+    font-size: inherit;
+    display: inline-block;
+    border-radius: 0px;
+    border-collapse: separate;
+    margin-top: 5px;
+}
+
+
+div.DateRangePicker_picker.DateRangePicker_picker_1.DateRangePicker_picker__directionLeft.DateRangePicker_picker__directionLeft_2 {
+    display: none;
+}
+
+.DateRangePickerInput__withBorder {
+    border: 0;
+}
+
+.CalendarDay__selected, .CalendarDay__selected:active, .CalendarDay__selected:hover {
+  /*background: rgb(41, 56, 55) !important;*/
+  /*border: 1px double rgb(41, 56, 55) !important;*/
+  /*color: rgb(251, 251, 252) !important;*/
+    display: none;
+
+}
+
+/* Calendar in between start and end date */
+.CalendarDay__selected_span {
+    background: #14213d !important;
+    border: 1px double rgb(93, 113, 120) !important;
+    color: rgb(251, 251, 252) !important;
+}
+
+.CalendarDay__selected_span:active, .CalendarDay__selected_span:hover {
+    background: rgb(57, 81, 85) !important;
+    border: 1px double rgb(57, 81, 85) !important;
+    color: rgb(251, 251, 252) !important;
+}
+/*.DayPicker.DayPicker_1.DayPicker__horizontal.DayPicker__horizontal_2.DayPicker__withBorder.DayPicker__withBorder_3 {*/
+/*    width: 360px !important;*/
+/*}*/
+
+/*.DayPicker_transitionContainer.DayPicker_transitionContainer_1.DayPicker_transitionContainer__horizontal.DayPicker_transitionContainer__horizontal_2 {*/
+/*    width: 360px !important;*/
+/*    height: 355px !important;*/
+/*}*/
