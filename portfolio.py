@@ -13,7 +13,7 @@ from euronext import nav_item
 from euronext import dropdown
 
 from df_and_graphs import final_portfolio
-
+from df_and_graphs import table_df
 
 pd.options.display.width = 0  # Make sure all columns of df fit
 
@@ -22,7 +22,7 @@ app = dash.Dash(external_stylesheets=[dbc.themes.LUX])
 colors = ['#14213d', '#fb8b24', '#2a9134', '#d00000']
 ########################################################################################################################
 """ Data wrangling for datatable"""
-df = pd.read_csv('Dashboard_columns.csv')
+df = table_df
 
 df['Acquisition Date'] = pd.to_datetime(df['Acquisition Date']).dt.date
 df = df.rename(

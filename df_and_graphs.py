@@ -17,7 +17,7 @@ TO DO
 '''Get Data and create dates necessary'''
 
 #* Import sample worksheet with acquisition dates and initial cost basis
-portfolio_df = pd.read_excel('Sample stocks acquisition dates_costs.xlsx', engine='openpyxl')
+portfolio_df = pd.read_excel('Sample stocks acquisition dates_costs.xlsx')
 # print(portfolio_df.dtypes)
 
 #* Create date ranges for S&P and for portfolio's tickers
@@ -258,7 +258,7 @@ final_portfolio['% off High'] = final_portfolio['Ticker Adj Close'] / final_port
 
 #* Add the standard deviation to the final_portfolio dataframe
 final_portfolio = pd.merge(final_portfolio, annualized_volatility, on='Ticker')
-final_portfolio = pd.merge(final_portfolio, beta, on='Ticker')
+# final_portfolio = pd.merge(final_portfolio, beta, on='Ticker')
 final_portfolio['Pct of portfolio'] = final_portfolio['Share Value'] / final_portfolio['Cum Ticker Return'].tail(1).values[0]
 # print(final_portfolio)
 
@@ -270,8 +270,8 @@ final_portfolio['Pct of portfolio'] = final_portfolio['Share Value'] / final_por
 ''' Export final portfolio for dashboard purposes'''
 selection = ['Ticker', 'Acquisition Date', 'Quantity', 'Unit Cost', 'Cost Basis', 'Pct of portfolio',
                                        'Ticker Adj Close', 'Ticker Return', 'SP Return', 'Share Value', 'Share YTD',
-                                       '% off High', 'Volatility', 'Beta']
-# table_df = final_portfolio.loc[:, selection]
+                                       '% off High', 'Volatility']
+table_df = final_portfolio.loc[:, selection]
 # table_df.to_csv('Dashboard_columns.csv', index=False)
 
 ######################################################################################################################
