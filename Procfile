@@ -1,1 +1,1 @@
-web: gunicorn financial-overview:server
+web: gunicorn index:server
