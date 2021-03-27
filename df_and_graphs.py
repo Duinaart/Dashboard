@@ -17,7 +17,7 @@ TO DO
 '''Get Data and create dates necessary'''
 
 #* Import sample worksheet with acquisition dates and initial cost basis
-portfolio_df = pd.read_excel('Sample stocks acquisition dates_costs.xls')
+portfolio_df = pd.read_excel('Sample stocks acquisition dates_costs.xlsx')
 # print(portfolio_df.dtypes)
 
 #* Create date ranges for S&P and for portfolio's tickers
