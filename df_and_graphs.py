@@ -4,8 +4,6 @@ import numpy as np
 import yfinance as yf
 import plotly.graph_objs as go
 import datetime
-from scipy import stats
-
 pd.options.display.width = 0  # Make sure all columns of df fit
 
 '''
@@ -128,25 +126,25 @@ def calculate_sharpe():
 sharpe = calculate_sharpe()
 
 #* Calculate Beta of portfolio
-def calculate_beta():
-    b = []
-    for ticker in tickers:
-        singled_ticker = adj_close[adj_close['Ticker'] == ticker]
-        singled_ticker.reset_index(drop=True, inplace=True)
-        pct_change_ticker = singled_ticker['Adj Close'].pct_change()
-        pct_change_ticker.dropna(axis=0, inplace=True)
-        rows = pct_change_ticker.shape[0]
-        pct_change_sp500 = volatility_sp500.iloc[-rows:]
-        x = pct_change_sp500
-        y = pct_change_ticker
-        slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
-        beta_function = slope
-        b.append({'Ticker': ticker, 'Beta': beta_function})
-    b = pd.DataFrame(b)
-    return b
-
-
-beta = calculate_beta()
+# def calculate_beta():
+#     b = []
+#     for ticker in tickers:
+#         singled_ticker = adj_close[adj_close['Ticker'] == ticker]
+#         singled_ticker.reset_index(drop=True, inplace=True)
+#         pct_change_ticker = singled_ticker['Adj Close'].pct_change()
+#         pct_change_ticker.dropna(axis=0, inplace=True)
+#         rows = pct_change_ticker.shape[0]
+#         pct_change_sp500 = volatility_sp500.iloc[-rows:]
+#         x = pct_change_sp500
+#         y = pct_change_ticker
+#         slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
+#         beta_function = slope
+#         b.append({'Ticker': ticker, 'Beta': beta_function})
+#     b = pd.DataFrame(b)
+#     return b
+#
+#
+# beta = calculate_beta()
 
 
 #######################################################################################################################
@@ -279,8 +277,8 @@ selection = ['Ticker', 'Acquisition Date', 'Quantity', 'Unit Cost', 'Cost Basis'
 ######################################################################################################################
 '''Calculate Portfolio performance and risk measures'''
 #* Calculate beta of portfolio
-portfolio_beta = (final_portfolio['Beta'] * final_portfolio['Pct of portfolio']).cumsum().tail(1).values[0]
-# print(portfolio_beta)
+# portfolio_beta = (final_portfolio['Beta'] * final_portfolio['Pct of portfolio']).cumsum().tail(1).values[0]
+# # print(portfolio_beta)
 
 
 #* Calculate the Sharpe Ratio of portfolio

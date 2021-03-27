@@ -82,7 +82,7 @@ navbar = dbc.Navbar(
     className='mb-5', )
 #######################################################################################################################
 '''Calculate Portfolio metrics'''
-portfolio_beta = (final_portfolio['Beta'] * final_portfolio['Pct of portfolio']).cumsum().tail(1).values[0].round(4)
+# portfolio_beta = (final_portfolio['Beta'] * final_portfolio['Pct of portfolio']).cumsum().tail(1).values[0].round(4)
 
 
 ''' Create Visualizations '''
@@ -306,7 +306,7 @@ body3 = html.Div(
                       'rule': 'display: inline; white-space: inherit; overflow: inherit; text-overflow: inherit;'}],
             ))),
         dbc.Col(dbc.Row(html.Br())),
-        dbc.Col(dbc.Row(html.P('The Portfolio Beta is {}'.format(portfolio_beta)))),
+        # dbc.Col(dbc.Row(html.P('The Portfolio Beta is {}'.format(portfolio_beta)))),
         dbc.Row(
             [
             dbc.Col(dbc.Card(dcc.Graph(id='total-return', figure=update_graph_3()))),
