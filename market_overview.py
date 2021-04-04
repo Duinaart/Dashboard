@@ -24,7 +24,7 @@ driver = webdriver.Chrome()
 driver.get(url)
 driver.maximize_window()
 
-w1 = WebDriverWait(driver, 8)
+w1 = WebDriverWait(driver, 30)
 w1.until(EC.presence_of_element_located((By.ID, "futures")))
 
 soup = bs(driver.page_source, 'html')
