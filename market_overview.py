@@ -20,11 +20,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 ###################################################################################################################
 url = 'https://finviz.com/futures.ashx'
+options = webdriver.ChromeOptions()
+options.add_argument("--headless")
+options.add_argument("window-size=1400,900")
+
 driver = webdriver.Chrome()
 driver.get(url)
 driver.maximize_window()
 
-w1 = WebDriverWait(driver)
+w1 = WebDriverWait(driver, 30)
 w1.until(EC.presence_of_element_located((By.ID, "futures")))
 
 soup = bs(driver.page_source, 'html')
