@@ -28,7 +28,7 @@ w1 = WebDriverWait(driver, 8)
 w1.until(EC.presence_of_element_located((By.ID, "futures")))
 
 soup = bs(driver.page_source, 'html')
-driver.quit()
+driver.close()
 divs = soup.find_all('div', {'class': 'tile_content'})
 # div = divs[0].contents
 
