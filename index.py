@@ -8,6 +8,7 @@ from portfolio import body3
 # from market_overview import body4
 
 from app import app
+server = app.server
 
 from euronext import register_callbacks_euronext
 from sp500 import register_callbacks_sp500
@@ -25,4 +26,4 @@ app.layout = dbc.Container(tabs)
 
 #########################################################################################################
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8050)
+    app.run_server(debug=True, port=8060)

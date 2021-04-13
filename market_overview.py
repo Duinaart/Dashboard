@@ -41,13 +41,13 @@
 # # get all small divs inside mother div
 # for j in range(len(divs)):
 #     div = divs[j].contents
-#     l = []
+#     n = []
 #     # every card contains multiple divs, get them all out and sort some stuff
 #     for i in range(len(div)):
-#         l.append(div[i].text)
-#     l.pop(2)
-#     l[2] = re.search('\(([^)]+)', l[2]).group(1)
-#     m.append(l)
+#         n.append(div[i].text)
+#     n.pop(2)
+#     n[2] = re.search('\(([^)]+)', n[2]).group(1)
+#     m.append(n)
 #
 # # * Convert list of lists into pandas Dataframe
 # df = pd.DataFrame(m)
@@ -176,7 +176,6 @@
 #             dbc.Row(dbc.Col(html.Br())),
 #             dbc.Row(dbc.Col(html.Br())),
 #             dbc.Row(dbc.Col(html.P(dcc.Markdown('Data: _https://finviz.com/futures.ashx_')))),
-#
 #         ]
 #     ))
 
