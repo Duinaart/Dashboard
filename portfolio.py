@@ -17,8 +17,6 @@ from df_and_graphs import table_df
 
 pd.options.display.width = 0  # Make sure all columns of df fit
 
-# Light theme: LUX, dark theme: DARKLY (enable darktheme in navbar)
-app = dash.Dash(external_stylesheets=[dbc.themes.LUX])
 colors = ['#14213d', '#fb8b24', '#2a9134', '#d00000']
 ########################################################################################################################
 """ Data wrangling for datatable"""
@@ -323,4 +321,4 @@ body3 = html.Div(
     ]
     )
 )
-#######################################################################################################################
+

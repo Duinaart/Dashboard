@@ -21,10 +21,7 @@ from bs4 import BeautifulSoup as bs
 import yahoo_fin.stock_info as si
 
 # Light theme: LUX, dark theme: DARKLY (enable darktheme in navbar)
-app = dash.Dash(external_stylesheets=[dbc.themes.LUX])
-##############################################################
-
-###############################################################
+################################################################
 # Make a navigation bar (dropdown items)
 ## Make a reusable navitem for different dashboards
 nav_item = nav_item

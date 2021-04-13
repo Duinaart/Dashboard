@@ -14,8 +14,6 @@ import pandas as pd
 from datetime import datetime as dt
 from datetime import date
 
-# Light theme: LUX, dark theme: DARKLY (enable darktheme in navbar)
-# app = dash.Dash(external_stylesheets=[dbc.themes.LUX])
 ##############################################################
 # Make a navigation bar (dropdown items)
 # Make a reusable navitem for different dashboards
