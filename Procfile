@@ -1,1 +1,1 @@
-web: gunicorn assets.app:server --workers=1 --timeout=50
+web: gunicorn app:server --workers=1 --timeout=50
