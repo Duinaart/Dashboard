@@ -13,12 +13,16 @@ import re
 import pandas as pd
 from bs4 import BeautifulSoup as bs
 # * Get data from the FinViz Website and transform it into readable html
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 ###################################################################################################################
+CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
+
+
 url = 'https://finviz.com/futures.ashx'
 options = webdriver.ChromeOptions()
 options.add_argument("--headless")
