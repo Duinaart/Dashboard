@@ -19,12 +19,18 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 ###################################################################################################################
+CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
+
 url = 'https://finviz.com/futures.ashx'
 options = webdriver.ChromeOptions()
 options.add_argument("--headless")
 options.add_argument("window-size=1400,900")
+options.add_argument('--disable-gpu')
+options.add_argument('--no-sandbox')
+options.binary_location = GOOGLE_CHROME_BIN
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
 driver.get(url)
 driver.maximize_window()
 
