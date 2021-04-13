@@ -7,7 +7,7 @@ from euronext import body1
 from sp500 import body2
 from portfolio import body3
 # Light theme: LUX, dark theme: DARKLY (enable darktheme in navbar)
-app = dash.Dash(external_stylesheets=[dbc.themes.LUX])
+app = dash.Dash(__name__,external_stylesheets=[dbc.themes.LUX])
 server = app.server
 app.config['suppress_callback_exceptions'] = True
 
