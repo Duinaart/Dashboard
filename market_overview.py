@@ -24,20 +24,22 @@ CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH', '/usr/bin/chromedriver')
 GOOGLE_CHROME_BIN = os.environ.get('GOOGLE_CHROME_BIN', '/usr/bin/google-chrome-stable')
 
 url = 'https://finviz.com/futures.ashx'
-options = webdriver.ChromeOptions()
-options.binary_location = GOOGLE_CHROME_BIN
+# options = webdriver.ChromeOptions()
+# options.binary_location = GOOGLE_CHROME_BIN
 # options.add_argument("--headless")
-options.add_argument("window-size=1400,900")
-options.add_argument('--disable-gpu')
-options.add_argument('--no-sandbox')
-# options.headless = True
+# options.add_argument("--window-size=1920,1080")
+# options.add_argument('--disable-gpu')
+# options.add_argument('--no-sandbox')
+# options.add_argument("--disable-extensions")
+# options.add_argument('disable-infobars')
 
-driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH , chrome_options=options)
+driver = webdriver.Firefox()
+driver.set_window_size(1200, 600)
 driver.get(url)
 driver.maximize_window()
 
 w1 = WebDriverWait(driver, 30)
-w1.until(EC.presence_of_element_located((By.ID, "futures")))
+w1.until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/div/div[1]/div/div[2]/div[1]/a[1]')))
 
 soup = bs(driver.page_source, 'html')
 driver.close()
