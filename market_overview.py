@@ -33,7 +33,7 @@ url = 'https://finviz.com/futures.ashx'
 # options.add_argument("--disable-extensions")
 # options.add_argument('disable-infobars')
 
-driver = webdriver.Firefox(executable_path='/usr/bin/geckodriver')
+driver = webdriver.Firefox()
 driver.set_window_size(1200, 600)
 driver.get(url)
 driver.maximize_window()
@@ -77,7 +77,6 @@ print(indices_df)
 risk_df = market_overview[market_overview['Index'].isin(risk)]
 risk_df['Risk Change Filtering'] = risk_df['% Change'].str.replace('%','')
 risk_df['Risk Change Filtering'] = pd.to_numeric(risk_df['Risk Change Filtering'])
-
 
 
 app = dash.Dash(external_stylesheets=[dbc.themes.LUX])
