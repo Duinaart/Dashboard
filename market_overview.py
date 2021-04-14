@@ -33,7 +33,7 @@ url = 'https://finviz.com/futures.ashx'
 # options.add_argument("--disable-extensions")
 # options.add_argument('disable-infobars')
 
-driver = webdriver.Firefox()
+driver = webdriver.Firefox(executable_path='/usr/bin/geckodriver')
 driver.set_window_size(1200, 600)
 driver.get(url)
 driver.maximize_window()
