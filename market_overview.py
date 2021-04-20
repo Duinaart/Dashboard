@@ -22,8 +22,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 ###################################################################################################################
 # CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH', '/usr/bin/chromedriver')
 # GOOGLE_CHROME_BIN = os.environ.get('GOOGLE_CHROME_BIN', '/usr/bin/google-chrome-stable')
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
-FIREFOX_BIN = '/app/vendor/firefox/firefox'
 
 url = 'https://finviz.com/futures.ashx'
 options = webdriver.FirefoxOptions()
@@ -35,7 +35,10 @@ options.add_argument("--window-size=1920,1080")
 # options.add_argument("--disable-extensions")
 # options.add_argument('disable-infobars')
 
-driver = webdriver.Firefox()
+FIREFOX_BIN = '/app/vendor/firefox/firefox'
+binary = FirefoxBinary('/app/vendor/firefox/firefox')
+
+driver = webdriver.Firefox(firefox_binary=binary)
 driver.set_window_size(1200, 600)
 driver.get(url)
 driver.maximize_window()
