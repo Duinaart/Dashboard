@@ -23,10 +23,12 @@ from selenium.webdriver.support.ui import WebDriverWait
 # CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH', '/usr/bin/chromedriver')
 # GOOGLE_CHROME_BIN = os.environ.get('GOOGLE_CHROME_BIN', '/usr/bin/google-chrome-stable')
 
+FIREFOX_BIN = '/app/vendor/firefox/firefox'
+
 url = 'https://finviz.com/futures.ashx'
 options = webdriver.FirefoxOptions()
-# options.binary_location = GOOGLE_CHROME_BIN
-options.add_argument("--headless")
+options.binary_location = FIREFOX_BIN
+options.add_argument("-headless")
 options.add_argument("--window-size=1920,1080")
 # options.add_argument('--disable-gpu')
 # options.add_argument('--no-sandbox')
