@@ -34,7 +34,6 @@ options.add_argument("--window-size=1920,1080")
 # options.add_argument("--disable-extensions")
 # options.add_argument('disable-infobars')
 
-FIREFOX_BIN = '/app/vendor/firefox/firefox'
 binary = FirefoxBinary('/app/vendor/firefox/firefox')
 
 driver = webdriver.Firefox(firefox_binary=binary)
