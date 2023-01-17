@@ -1,9 +1,9 @@
 import dash
-import dash_table
+from dash import dash_table
 
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
 
 import pandas as pd
 import plotly.graph_objs as go
@@ -62,7 +62,7 @@ navbar = dbc.Navbar(
                     height='30px')), width='auto'),
                     dbc.Col((dbc.NavbarBrand('Finance Dashboard')), width='auto')],
                 align='center',
-                no_gutters=True,
+                className="g-0"
             ),
             dbc.Row(dbc.Col(dbc.NavbarToggler(id='navbar-toggler4'))),
             dbc.Row(dbc.Col(dbc.Collapse(

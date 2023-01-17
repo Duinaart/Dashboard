@@ -1,8 +1,8 @@
 import dash
-import dash_table
+from dash import dash_table
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
 from dash.dependencies import Input, Output
 
 from datetime import datetime as dt
@@ -40,7 +40,7 @@ navbar = dbc.Navbar(
                     height='30px')), width='auto'),
                     dbc.Col((dbc.NavbarBrand('Finance Dashboard')), width='auto')],
                 align='center',
-                no_gutters=True,
+                className="g-0"
             ),
             dbc.Row(dbc.Col(dbc.NavbarToggler(id='navbar-toggler3'))),
             dbc.Row(dbc.Col(dbc.Collapse(
@@ -109,7 +109,7 @@ body2 = html.Div(
                 [
                     dbc.Col(dcc.Graph(id='linegraph-container-sp', figure={}), width=9),
                     dbc.Col(html.Div(id='table'), width='auto')
-                ], form=True, align='center')
+                ], align='center')
             # dbc.Row(dbc.Col(html.Div(id='table')))
 
         ]

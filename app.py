@@ -6,16 +6,16 @@ from sp500 import register_callbacks_sp500
 from euronext import body1
 from sp500 import body2
 from portfolio import body3
-from market_overview import body4
+# from market_overview import body4
 # Light theme: LUX, dark theme: DARKLY (enable darktheme in navbar)
-app = dash.Dash(__name__,external_stylesheets=[dbc.themes.LUX])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
 server = app.server
 app.config['suppress_callback_exceptions'] = True
 
 
 tabs = dbc.Tabs(
     [
-        dbc.Tab(body4, label='Market'),
+        # dbc.Tab(body4, label='Market'),
         dbc.Tab(body1, label='Euronext'),
         dbc.Tab(body2, label='S&P 500'),
         dbc.Tab(body3, label='Portfolio'),

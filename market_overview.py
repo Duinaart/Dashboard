@@ -1,5 +1,5 @@
 import dash
-import dash_table
+from dash import dash_table
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
@@ -20,23 +20,16 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 ###################################################################################################################
-# CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH', '/usr/bin/chromedriver')
-# GOOGLE_CHROME_BIN = os.environ.get('GOOGLE_CHROME_BIN', '/usr/bin/google-chrome-stable')
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
-
 
 url = 'https://finviz.com/futures.ashx'
 options = webdriver.FirefoxOptions()
 options.add_argument("--headless")
-# options.add_argument("--window-size=1920,1080")
-# options.add_argument('--disable-gpu')
-# options.add_argument('--no-sandbox')
-# options.add_argument("--disable-extensions")
-# options.add_argument('disable-infobars')
 
-binary = FirefoxBinary('/app/vendor/firefox/firefox')
 
-driver = webdriver.Firefox(firefox_binary=binary)
+# binary = FirefoxBinary('/app/vendor/firefox/firefox')
+
+# driver = webdriver.Firefox(firefox_binary=binary)
 driver.set_window_size(1200, 600)
 driver.get(url)
 driver.maximize_window()
