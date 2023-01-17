@@ -40,7 +40,7 @@ navbar = dbc.Navbar(
                     height='30px')), width='auto'),
                     dbc.Col((dbc.NavbarBrand('Finance Dashboard')), width='auto')],
                 align='center',
-                className="g-0"
+                className="gx-0"
             ),
             dbc.Row(dbc.Col(dbc.NavbarToggler(id='navbar-toggler3'))),
             dbc.Row(dbc.Col(dbc.Collapse(
@@ -107,9 +107,9 @@ body2 = html.Div(
             )),
             dbc.Row(
                 [
-                    dbc.Col(dcc.Graph(id='linegraph-container-sp', figure={}), width=9),
-                    dbc.Col(html.Div(id='table'), width='auto')
-                ], align='center')
+                    dbc.Col(dcc.Graph(id='linegraph-container-sp', figure={}), width=8),
+                    dbc.Col(html.Div(id='table'), width=4)
+                ], align='center'),
             # dbc.Row(dbc.Col(html.Div(id='table')))
 
         ]
